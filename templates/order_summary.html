@@ -6,8 +6,14 @@
 </head>
 <body>
     <h1>Order Summary</h1>
-    <h2>Customer Name: </h2>
-    <h3>Table Number: </h3>
-    <h3>Order Summary:</h3>
+    <h2>Customer Name: {{ order.customer }}</h2>
+    <h3>Table Number: {{ order.table_number }}</h3>
+    <h3>Order Summary:
+        <ul>
+            {% for item in order.order_items %}
+            <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </h3>
 </body>
 </html>
